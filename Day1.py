@@ -1,6 +1,4 @@
-arr = []
-sum = ""
-num_sum = 0
+sum = 0
 
 entries = """
 3fiveone
@@ -1008,13 +1006,10 @@ fourknflljrbrq63five
 lines = [line.strip() for line in entries.strip().split('\n')]
 print(lines)
 for i in lines:
-    for j in i:
-        if j.isdigit() == True:
-            arr.append(j)
-        length = len(arr)
-    if length > 0:
-        sum += arr[0] + arr[length-1]
-        num_sum += int(sum)
-        sum = ""
     arr = []
-print(num_sum)
+    for j in i:
+        if j.isdigit():
+            arr.append(j)
+    if len(arr) > 0:
+        sum += int(arr[0] + arr[-1])
+print(sum)
