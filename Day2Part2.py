@@ -126,31 +126,11 @@ for match in matches:
         if "blue" in segment:
             blues.extend([int(num) for num in re.findall(r"(\d+) blue", segment)])
 
-    for c in range(0,len(reds)):
-        for d in range(0, len(reds)):
-            if (d != len(reds)-1) and (reds[d] > reds[d+1]):
-                reds[d], reds[d+1] = reds[d+1], reds[d]
-            else:
-                pass
-    minimumRed = reds[-1]
+    minimumRed = max(reds)
+    minimumGreen = max(greens)
+    minimumBlue = max(blues)
 
-    for c in range(0,len(greens)):
-        for d in range(0, len(greens)):
-            if (d != len(greens)-1) and (greens[d] > greens[d+1]):
-                greens[d], greens[d+1] = greens[d+1], greens[d]
-            else:
-                pass
-    minimumGreens = greens[-1]
-
-    for c in range(0,len(blues)):
-        for d in range(0, len(blues)):
-            if (d != len(blues)-1) and (blues[d] > blues[d+1]):
-                blues[d], blues[d+1] = blues[d+1], blues[d]
-            else:
-                pass
-    minimumBlues = blues[-1]
-
-    power = minimumRed*minimumGreens*minimumBlues
+    power = minimumRed*minimumGreen*minimumBlue
 
     sumOfPower += power
 print(sumOfPower)
