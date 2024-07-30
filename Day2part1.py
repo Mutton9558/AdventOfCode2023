@@ -126,26 +126,9 @@ for match in matches:
         if "blue" in segment:
             blues.extend([int(num) for num in re.findall(r"(\d+) blue", segment)])
 
-    for c in reds:
-        if c <= 12:
-            redsNotExceed = True
-        else:
-            redsNotExceed = False
-            break
-
-    for c in greens:
-        if c <= 13:
-            greensNotExceed = True
-        else:
-            greensNotExceed = False
-            break
-
-    for c in blues:
-        if c <= 14:
-            bluesNotExceed = True
-        else:
-            bluesNotExceed = False
-            break
+    redsNotExceed = all(c <= 12 for c in reds)
+    greensNotExceed = all(c <= 13 for c in greens)
+    bluesNotExceed = all(c <= 14 for c in blues)
 
     if redsNotExceed and greensNotExceed and bluesNotExceed:
         idSum += int(game_number)
