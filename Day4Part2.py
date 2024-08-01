@@ -1,4 +1,4 @@
-# Ultra mega unoptimized code might revise for the future (note it took me ~1 min to computer I am not getting past any interviews 💀
+# Ultra mega unoptimized code might revise for the future (note it took me ~1 min to compute the ans I am not getting past any interviews 💀
 
 import re
 
